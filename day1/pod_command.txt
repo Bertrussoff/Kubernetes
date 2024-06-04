@@ -1,0 +1,22 @@
+day 29
+
+
+pod create command:
+
+kubectl create -f pod.yml
+
+how to debug the pod
+
+kubectl logs pod_name
+
+kubectl describe pod pod_name
+
+
+
+kubectl get pod  pod_name -o wide
+kubectl delete pod pod_name
+
+
+how to log into minikube clusetr 
+
+minikube ssh
