@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-helloworld-deployment
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: python-helloworld
+  template:
+    metadata:
+      labels:
+        app: python-helloworld
+    spec:
+      containers:
+      - name: hello
+        image: hello:latest
+        ports:
+        - containerPort: 80
