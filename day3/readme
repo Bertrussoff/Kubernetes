@@ -1,2 +1,13 @@
 day3>>>  pod and deployment
 
+
+
+command:
+
+minikube start
+
+kubectl apply -f pod.yml  >> this command for create a pod 
+
+kubectl get pods -o wide
+kubectl get pods    >>>   view the created pods
+kubectl delete pod my-pod  >>    delete the pod
