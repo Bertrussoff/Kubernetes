@@ -12,7 +12,6 @@ kubectl logs pod_name
 kubectl describe pod pod_name
 
 
-
 kubectl get pod  pod_name -o wide
 kubectl delete pod pod_name
 
