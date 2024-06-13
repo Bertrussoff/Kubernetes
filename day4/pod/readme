@@ -1,0 +1,23 @@
+day4
+
+create a simple python docker image  push the image to docker hub
+step 1
+docker login
+docker build -t username/imagename:latest
+docker push username/imagename:latest
+
+
+
+step 2
+how to create pod in k8s
+
+command :  kubectl apply -f pod.yml
+
+how to view created pod
+
+command : kubectl get pods -o wide or kubectl get pods
+
+
+delete the pod:
+
+command: kubectl delete pods pod name

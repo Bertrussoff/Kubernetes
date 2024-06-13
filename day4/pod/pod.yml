@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-local-image-pod
+spec:
+  containers:
+  - name: python
+    image: username/imagename:latest
+    ports:
+    - containerPort: 80
