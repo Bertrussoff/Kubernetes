@@ -1,0 +1,45 @@
+step 1 : push the docker image to your docker hub 
+
+sudo docker login 
+
+sudo docker build -t your_docker_user_name/image_name:latest .
+
+sudo docker push your_docker_user_name/image_name:latest
+
+
+step 2 :  create a deployment
+
+minikube start
+
+kubectl apply -f deployment.yml
+
+kubectl get pod -o wide  >>>  copy the pod ip
+
+kubectl logs name_of_the_pod   >>  verify pod is running or not
+
+minikube ssh    >>> login into the minikube
+
+curl -L http://pod_ip:80
+
+
+
+step 3 : verify the replica set it is working or not
+
+open two terminal 
+
+first terminal run this command :
+
+kubectl get pods -w  >> by using this command you can monitor the pods status
+
+
+open the second terminal run this command:
+
+kubectl get pods
+
+kubectl delete pods pod_name
+
+
+
+watch the first terminal you can see the changes
+
+
