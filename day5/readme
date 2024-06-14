@@ -43,3 +43,6 @@ kubectl delete pods pod_name
 watch the first terminal you can see the changes
 
 
+kubectl get replicaset  >>  by using this command you can view the replica set
+
+
