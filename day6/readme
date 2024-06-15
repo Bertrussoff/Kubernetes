@@ -1,0 +1,75 @@
+topic : service in k8s
+
+
+three concept covered in service
+
+#load balancing(cloud provider (access our application outside the world))
+#service discovery(labels and selectors)
+#port expose (cluster ip and node port,access our application inside the vpc)
+
+
+#step 1:
+
+please refer the day 5 read me File  i have coverd deployment in k8s 
+
+once you done the deployment you continue this service
+
+
+#step 2 :
+
+i have created a node_port folder inside the folder there is a file named service.yml
+
+read that file i have added selectors 
+
+where can i get that selectors  i got it from the deployment File
+
+and you can see the 
+
+spec:
+  type: 
+
+here you can mention the service type 
+
+
+and 
+
+ ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30080
+
+
+here i mentioned the nodeport type this is the port  i can i access the applictaion inside the vpc 
+this spec type is spec:  type: NodePort   so by using this type we can access our application inside the vpc 
+
+
+
+
+if you want to access your application from internet you go with  
+
+spec:
+  type: LoadBalancer
+
+kubectl get svc  use this command to view the service external ip if you run your k8s in minikube in your local you will ket external ip as pending why?
+
+because it is working only if you user ccp  which is cloud control provider
+
+
+#step3
+commands:
+
+how to create a svc service 
+
+kubectl apply -f service.yml
+
+how to view the serice
+
+kubectl get svc 
+
+if you want to edit the service file after deployment you can you
+
+kubectl edit svc serice_name
+
+
+
