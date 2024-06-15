@@ -1,0 +1,52 @@
+1. kubectl cluster-info
+
+2. kubectl version
+
+3. kubectl config view
+
+4. kubectl api-resources
+
+5. kubectl get all --all-namespaces
+
+6. kubectl get node
+
+7. kubectl taint node node_name
+
+8. kubectl delete node node_name
+
+9. kubectl get pod
+
+10. kubectl delete pod pod_name
+
+11. kubectl describe pod pod_name
+
+12. kubectl create pod pod_name
+
+13. kubectl exec -it pod_name /bin/sh
+
+14. kubectl top pod
+
+15. kubectl exec pod_name -c container_name commands
+
+16. kubectl annotate pod pod_name annotation
+
+17. kubectl label pod pod_name
+
+18. kubectl get replicaset
+
+19. kubectl get deployment
+
+20. kubectl describe deployment deployment_name
+
+21. kubectl edit deployment deployment_name
+
+22. kubectl create deployment deployment_name
+
+23. kubectl get pod -o wide
+
+24. kubectl get configmap
+
+25. kubectl get secrets
+
+26. kubectl get service
+

@@ -8,6 +8,6 @@ spec:
     app: flask-hello-world
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
-      nodePort: 30080
+      port: 8000   #expose ip in minikube
+      targetPort: 80   # expose ip in docker
+      nodePort: 30080  #expose ip in local port
