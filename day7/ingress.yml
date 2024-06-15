@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /ingress
+spec:
+  rules:
+  - host: app1.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: flask-hello
+            port:
+              number: 80
+      # - path: /ingress
+      #   pathType: Prefix
+      #   backend:
+      #     service:
+      #       name: flask-hello
+      #       port:
+      #         number: 80

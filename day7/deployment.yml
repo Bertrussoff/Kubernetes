@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingress-python
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask-hello
+  template:
+    metadata:
+      labels:
+        app: flask-hello
+    spec:
+      containers:
+      - name: flask-hello-world
+        image: bharathikalai/dolu_bolu:latest
+        ports:
+        - containerPort: 80

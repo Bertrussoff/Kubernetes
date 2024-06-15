@@ -1,0 +1,19 @@
+topic: ingress
+
+command 1 : enable the ingress controller for your minikube us this command
+
+minikube addons enable ingress
+
+command 2 : how to create ingress 
+
+kubectl apply -f ingress.yml
+
+command 3 : how to verify ingress  controller pod 
+
+kubectl get pod -A | grep nginx
+
+command 4: how to verify the ingress is created or not
+
+kubectl get ingress
+
+
