@@ -1,3 +1,29 @@
 topic :
 
 secret & config map
+
+why we need configmap and secret what is the purpose in k8s
+
+using config map and secret we can pass the env variable to our application 
+
+config map :  not encrypted value >> voluemount is possible  : using volume mount we can pass the env to the application without restart
+
+secret : encrypted value
+
+command:
+
+how to create a config map
+
+kubectl apply -f configmap.yml
+
+how to create a secret 
+
+kubectl apply -f secret.yml
+
+how to view config map 
+
+kubectl get cm
+
+how to view secret 
+
+kubectl get secret

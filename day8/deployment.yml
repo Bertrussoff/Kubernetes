@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: config-volume
+          mountPath: /usr/share/nginx/html/index.html
+          subPath: index.html
+        env:
+        - name: NGINX_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: nginx-secret
+              key: username
+        - name: NGINX_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: nginx-secret
+              key: password
+      volumes:
+      - name: config-volume
+        configMap:
+          name: nginx-config
