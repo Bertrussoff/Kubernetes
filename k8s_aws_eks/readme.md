@@ -1,5 +1,5 @@
 # K8S eks project 
-## prerequisite  (install eks ctl on your local and instal kubectl ctl )
+## prerequisite  (install eks ctl on your local and install kubectl ctl )
 
 ## Step 1
 
