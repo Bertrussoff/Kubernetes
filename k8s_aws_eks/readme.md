@@ -65,14 +65,14 @@ curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-cont
 
 ## create iam role
 
-```bash
+```
 eksctl create iamserviceaccount \
   --cluster=<your-cluster-name> \
   --namespace=kube-system \
   --name=aws-load-balancer-controller \
   --role-name AmazonEKSLoadBalancerControllerRole \
   --attach-policy-arn=arn:aws:iam::<your-aws-account-id>:policy/AWSLoadBalancerControllerIAMPolicy \
-  --approve
+  --approve ````
 
 ## Deploy ALB controller
 
