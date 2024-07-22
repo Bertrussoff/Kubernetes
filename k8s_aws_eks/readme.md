@@ -65,7 +65,7 @@ curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-cont
 
 ## create iam role
 
-#### eksctl create iamserviceaccount \
+### eksctl create iamserviceaccount \
   --cluster=<your-cluster-name> \
   --namespace=kube-system \
   --name=aws-load-balancer-controller \
