@@ -1,5 +1,5 @@
 # K8S eks project 
-## prerequisite  (install eks ctl on your local and install kubectl ctl )
+## Prerequisite  (install eks ctl on your local and install kubectl ctl )
 
 ## Step 1
 
@@ -58,14 +58,14 @@ curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-cont
 
 ## Create iam policy 
 
-aws iam create-policy \
+#### aws iam create-policy \
     --policy-name AWSLoadBalancerControllerIAMPolicy \
     --policy-document file://iam_policy.json
 
 
 ## create iam role
 
-eksctl create iamserviceaccount \
+#### eksctl create iamserviceaccount \
   --cluster=<your-cluster-name> \
   --namespace=kube-system \
   --name=aws-load-balancer-controller \
@@ -86,7 +86,7 @@ eksctl create iamserviceaccount \
 
 ## Install the alb on cluster
 
-helm install aws-load-balancer-controller eks/aws-load-balancer-controller \            
+#### helm install aws-load-balancer-controller eks/aws-load-balancer-controller \            
   -n kube-system \
   --set clusterName=<your-cluster-name> \
   --set serviceAccount.create=false \
