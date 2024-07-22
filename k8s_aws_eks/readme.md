@@ -59,14 +59,14 @@ curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-cont
 ## Create iam policy 
 
 #### aws iam create-policy \
-    --policy-name AWSLoadBalancerControllerIAMPolicy \
-    --policy-document file://iam_policy.json
+#### --policy-name AWSLoadBalancerControllerIAMPolicy \
+#### --policy-document file://iam_policy.json
 
 
 ## create iam role
 
 ### eksctl create iamserviceaccount \
-  --cluster=<your-cluster-name> \
+### --cluster=<your-cluster-name> \
   --namespace=kube-system \
   --name=aws-load-balancer-controller \
   --role-name AmazonEKSLoadBalancerControllerRole \
