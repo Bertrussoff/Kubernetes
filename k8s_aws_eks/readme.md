@@ -103,13 +103,19 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
 
 
 
-# finally : alb 1
-
+# finally first one completed : alb 1
+## get the dns name on ec2 alb 
 ![alt text](image-5.png)
 
-# alb 2
 
+
+
+
+# second same step alb 2  (run deployment2.yml file by using kubectl -f deployment2.yml)
+# get the dns name on ec2 alb
 ![alt text](image-7.png)
+
+
 
 
 
