@@ -1,25 +1,25 @@
-# k8s eks project 
+# K8S eks project 
 ## prerequisite  (install eks ctl on your local and instal kubectl ctl )
 
-## step 1
+## Step 1
 
-### run this command to create the cluster 
+### Run this command to create the cluster 
 
 #### eksctl create cluster --name demo-cluster --region ap-south-1 --fargate (note: it will take more than 10min)
-### terminal view
+### Terminal view
 ![alt text](image.png)
 
 ### aws console
 ![alt text](image-1.png)
 
-## step 2
+## Step 2
 
-### run this command for update kubeconf to your local
+### Run this command for update kubeconf to your local
 
 #### aws eks update-kubeconfig --name demo-cluster --region ap-south-1
 
 
-## step 3 
+## Step 3 
 
 ### create a fargate profile 
 
@@ -31,7 +31,7 @@
 ![alt text](image-2.png)
 
 
-## step 4 (deploy the application)
+## Step 4 (deploy the application)
 
 ### deploy the deployment,service,ingress
 
@@ -40,23 +40,23 @@
 ![alt text](image-3.png)
 
 
-## step 5 view the pod
+## Step 5 view the pod
 
 ##   kubectl get pods -n game-2048
 
 ![alt text](image-4.png)
 
 
-## oidc
+## Attach OIDC
 
 eksctl utils associate-iam-oidc-provider --cluster $cluster_name --approve
 
 
-## download iam policy 
+## Download iam policy 
 
 curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/install/iam_policy.json
 
-## create iam policy 
+## Create iam policy 
 
 aws iam create-policy \
     --policy-name AWSLoadBalancerControllerIAMPolicy \
@@ -84,7 +84,7 @@ eksctl create iamserviceaccount \
 
 
 
-## install 
+## Install the alb on cluster
 
 helm install aws-load-balancer-controller eks/aws-load-balancer-controller \            
   -n kube-system \
@@ -103,23 +103,23 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
 
 
 
-# finally first one completed : alb 1
-## get the dns name on ec2 alb 
+## Finally first one completed : alb 1
+### get the dns name on ec2 alb 
 ![alt text](image-5.png)
 
 
 
 
 
-# second same step alb 2  (run deployment2.yml file by using kubectl -f deployment2.yml)
-# get the dns name on ec2 alb
+## Second same step alb 2  (run deployment2.yml file by using kubectl -f deployment2.yml)
+### get the dns name on ec2 alb
 ![alt text](image-7.png)
 
 
 
 
 
-## delete your cluster
+## Delete your cluster
 
 ### eksctl delete cluster --name demo-cluster --region ap-south-1
 
