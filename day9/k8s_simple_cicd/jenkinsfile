@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    dockerimagename = "bharathikalai/bharathi"
+    dockerimagename = "thetips4you/nodeapp"
     dockerImage = ""
   }
 
@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        checkout scm
+        git 'https://github.com/shazforiot/nodeapp_test.git'
       }
     }
 
