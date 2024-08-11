@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-  res.send('ci cd kubernetes  deployment using jenkins pipeline');
+  res.send('abc');
 });
 
 app.listen(port, () => {
