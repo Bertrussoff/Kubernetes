@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: bharathikalai/bharathi:latest
+        image: bharathikalai/bharathi:${BUILD_NUMBER}
+
         ports:
         - containerPort: 3000
         
