@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    dockerimagename = "thetips4you/nodeapp"
+    dockerimagename = "bharathikalai/bharathi"
     dockerImage = ""
   }
 
@@ -11,14 +11,16 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/shazforiot/nodeapp_test.git'
+        git branch: 'main', url: 'https://github.com/bharathikalai/Kubernetes.git'
       }
     }
 
     stage('Build image') {
       steps{
         script {
+            dir('day9/k8s_simple_cicd'){
           dockerImage = docker.build dockerimagename
+        }
         }
       }
     }
@@ -39,7 +41,9 @@ pipeline {
     stage('Deploying App to Kubernetes') {
       steps {
         script {
-          kubernetesDeploy(configs: "deploymentservice.yml", kubeconfigId: "kubernetes")
+        dir('day9/k8s_simple_cicd'){
+          kubernetesDeploy(configs: "deployment.yml", kubeconfigId: "kubernetes")
+        }
         }
       }
     }
