@@ -1,0 +1,13 @@
+kubectl apply -f pod.yml
+
+kubectl get pods
+
+kubectl describe pod pod_name
+
+kubectl port-forward pod/pod_name 8080:80
+
+kubectl delete -f pod_name
+
+kubectl logs -f pod_name
+
+kubectl set image pod/pod_name nginx=apache2:latest
