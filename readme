@@ -19,3 +19,5 @@ sudo dpkg -i minikube_latest_amd64.deb
 minikube start --driver=docker
 minikube kubectl -- get pods -A
 
+
+test

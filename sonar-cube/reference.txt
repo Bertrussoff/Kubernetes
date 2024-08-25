@@ -1,0 +1,3 @@
+how to install sonar cube in your local : https://medium.com/@chiemelaumeh1/how-to-install-sonarqube-using-docker-compose-on-ubuntu-linux-perform-code-analysis-using-98dfe2eb7044
+
+sonarcube : login password admin , admin

@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    dockerimagename = "bharathikalai/bharathi"
+    dockerimagename = "bharathikalai/bharathi:${BUILD_NUMBER}"
     dockerImage = ""
   }
 
@@ -32,7 +32,7 @@ pipeline {
       steps{
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
-            dockerImage.push("latest")
+            dockerImage.push("${BUILD_NUMBER}")
           }
         }
       }
