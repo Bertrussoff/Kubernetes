@@ -20,4 +20,3 @@ minikube start --driver=docker
 minikube kubectl -- get pods -A
 
 
-test
