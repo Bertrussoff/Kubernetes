@@ -45,3 +45,14 @@ kubectl logs pod_name -f
 kubectl describe pod pod_name
 
 ```
+
+
+# Control plain
+
+```
+kubectl get pod -n kube-system
+```
+
+```
+kubectl get nodes -o wide
+```

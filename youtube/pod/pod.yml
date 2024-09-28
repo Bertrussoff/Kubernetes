@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
-metadata:
-  name: first-pod
+metadata: 
+  name: bharathi
 spec:
   containers:
-  - name: nginx
-    image: nginx:latest
-    ports:
-    - containerPort: 80
+    - name: bharathi-nginx
+      image: nginx
+      ports:
+        - containerPort: 80
