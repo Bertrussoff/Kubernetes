@@ -1,0 +1,19 @@
+apiVersion: apps/v1  
+kind: Deployment     
+metadata:
+  name: bharathi-deployment
+spec:
+  replicas: 3        
+  selector:
+    matchLabels:
+      app: bharathi-app  
+  template:
+    metadata:
+      labels:
+        app: bharathi-app  
+    spec:
+      containers: 
+        - name: bharathi-app
+          image: bharathikalai/ajith:latest
+          ports:
+            - containerPort: 5000  
