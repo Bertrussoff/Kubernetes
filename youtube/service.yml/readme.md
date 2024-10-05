@@ -31,3 +31,5 @@ kubectl get pod -o wide
 kubectl logs <pod name> -f
 
 ```
+
+
