@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: configmap-example-service
+spec:
+  selector:
+    app: configmap-example
+  ports:
+    - protocol: TCP
+      port: 80          # The port that the service will listen on inside the cluster
+      targetPort: 80    # The port where the container is listening
+      nodePort: 30007   # The specific NodePort (optional), otherwise Kubernetes will assign a port between 30000-32767
+  type: NodePort

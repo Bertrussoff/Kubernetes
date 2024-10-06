@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: configmap-example-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: configmap-example
+  template:
+    metadata:
+      labels:
+        app: configmap-example
+    spec:
+      containers:
+      - name: configmap-example-app
+        image: nginx
+        ports:
+        - containerPort: 80
+        env:
+        - name: WELCOME_MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: my-config          # Name of the ConfigMap
+              key: welcome_message     # Key in the ConfigMap to use
+

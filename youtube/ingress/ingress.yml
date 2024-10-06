@@ -6,13 +6,20 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: 192.168.99.100.nip.io     # Replace this with your domain
+  - host: veathalam.com     # Replace this with your domain
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: bharathi-clusterip-service
+            name: bharathi-nodeport-service
+            port:
+              number: 80
+      - path: /ss
+        pathType: Prefix
+        backend:
+          service:
+            name: gsjhdhs
             port:
               number: 80
