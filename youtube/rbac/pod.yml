@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example-pod
+  namespace: default
+spec:
+  serviceAccountName: my-service-account  # This tells the pod to use 'my-service-account'
+  containers:
+  - name: nginx-container
+    image: nginx

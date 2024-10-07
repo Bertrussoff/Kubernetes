@@ -23,4 +23,9 @@ spec:
             configMapKeyRef:
               name: my-config          # Name of the ConfigMap
               key: welcome_message     # Key in the ConfigMap to use
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: my-secret          # Name of the Secret
+              key: db_password 
 
