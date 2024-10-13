@@ -5,5 +5,10 @@ metadata:
   name: pod-reader
 rules:
 - apiGroups: [""]
-  resources: ["pods"]
+  resources: ["config-map-bharathi"]
   verbs: ["get", "list", "watch"]
+rules:
+- apiGroups: [""]
+  resources: ["secret-bharathi"]
+  verbs: ["get", "list", "watch"]
+
