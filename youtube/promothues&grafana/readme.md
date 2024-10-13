@@ -29,7 +29,7 @@ helm install prometheus prometheus-community/prometheus
 ## check the promotheus pod
 
 ```
-helm install prometheus prometheus-community/prometheus
+kubectl get pods -A
 
 ```
 
