@@ -55,6 +55,10 @@ count(kube_pod_status_phase{phase="Running"})
 
 # Grafana installation
 
+## architecture
+
+![alt text](image-1.png)
+
 
 ##  grafana added to the helm chart 
 
