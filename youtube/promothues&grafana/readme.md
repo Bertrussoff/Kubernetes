@@ -44,7 +44,12 @@ kubectl get pods
 ```
 kubectl patch svc prometheus-server -p '{"spec": {"type": "NodePort", "ports": [{"port": 80, "nodePort": 30080}]}}'
 ```
+## minikube ip 
 
+```
+minikube ip 
+
+```
 
 ## promql
 
