@@ -1,20 +1,40 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: domain1-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      run: nginx
+      app: app1
   template:
     metadata:
       labels:
-        run: nginx
+        app: app1
     spec:
       containers:
-      - name: nginx
-        image: nginx
-        ports:
-          - containerPort: 80
-        imagePullPolicy: IfNotPresent
+        - name: app1
+          image: bharathikalai/app1:latest  # Replace with your image
+          ports:
+            - containerPort: 8081
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: domain2-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app2
+  template:
+    metadata:
+      labels:
+        app: app2
+    spec:
+      containers:
+        - name: app2
+          image: bharathikalai/app2:latest  # Replace with your image
+          ports:
+            - containerPort: 8081

@@ -1,15 +1,26 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx
-  labels:
-    run: nginx
+  name: domain-app1-service
 spec:
   type: NodePort
-  ports:
-  - port: 8080
-    targetPort: 80
-    protocol: TCP
-    name: http
   selector:
-    run: nginx
+    app: app1
+  ports:
+    - port: 80
+      targetPort: 8081
+      nodePort: 30001  # Optional: specify a fixed port or leave it to auto-assign
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: domain-app2-service
+spec:
+  type: NodePort
+  selector:
+    app: app2
+  ports:
+    - port: 80
+      targetPort: 8081
+      nodePort: 30002  # Optional: specify a fixed port or leave it to auto-assign
