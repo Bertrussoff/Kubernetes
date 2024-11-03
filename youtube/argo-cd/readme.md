@@ -32,3 +32,12 @@ kubectl scale --replicas=3 deployment nginx -n default
 kubectl delete -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 kubectl delete namespace argocd
 ```
+
+
+
+
+i want to do this 1.30hr
+
+```
+https://youtu.be/q4g7KJdFSn0?si=6dZ3J1vy9d1ZDaJh
+```
