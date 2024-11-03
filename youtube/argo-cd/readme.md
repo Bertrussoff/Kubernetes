@@ -34,9 +34,41 @@ kubectl delete namespace argocd
 ```
 
 
+#Cli install
+
+```
+VERSION=$(curl -s https://api.github.com/repos/argoproj/argo-cd/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")') && \
+curl -sSL https://github.com/argoproj/argo-cd/releases/download/${VERSION}/argocd-linux-amd64 -o argocd
+```
+```
+chmod +x argocd
+```
+
+```
+sudo mv argocd /usr/local/bin/
+```
+
+```
+argocd version
+```
+
+# argocd login command
+
+```
+argocd login 192.168.49.2:32571 --username admin --password 86Gvvd28wqlxvgXw --insecure
+
+```
+
+# argo cd app command 
+
+```
+argocd app list
+
+syncInterval: 10s
 
 
-i want to do this 1.30hr
+```
+
 
 ```
 https://youtu.be/q4g7KJdFSn0?si=6dZ3J1vy9d1ZDaJh
