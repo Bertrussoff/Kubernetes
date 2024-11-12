@@ -2,11 +2,28 @@
 
 ```
 https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+
+
 ```
 
-# kubeadm init
+# install docker 
 
-# sudo apt install docker.io
+```
+sudo apt install docker.io
+
+# init the kubeadm
+```
+kubeadm init
+```
+
+
+```
+
+# give the permission
+
+```
+sudo chmod 644 /etc/kubernetes/admin.conf
+```
 
 
 # Installing Calico CNI Plugin
@@ -14,4 +31,16 @@ https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-ku
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 ```
 
-# kubectl get node
+# get the node
+
+```
+kubectl get node
+```
+
+
+# Pod schedule on control plane
+
+```
+kubectl taint nodes --all node-role.kubernetes.io/control-plane:NoSchedule-
+
+```
