@@ -1,1 +1,0 @@
-cd /var/lib/minikube/certs/etcd
